@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Card de um exercício na lista da aba "Hoje". -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_exercise"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_md"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_md">
+
+        <!-- Miniatura do vídeo com número do exercício e ícone de play sobrepostos -->
+        <FrameLayout
+            android:layout_width="@dimen/thumbnail_card_width"
+            android:layout_height="@dimen/thumbnail_card_height">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.AppTreino.Thumbnail"
+                tools:src="@drawable/placeholder_thumbnail" />
+
+            <ImageView
+                android:layout_width="@dimen/play_button_small"
+                android:layout_height="@dimen/play_button_small"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle_scrim"
+                android:importantForAccessibility="no"
+                android:padding="@dimen/play_icon_padding_small"
+                android:src="@drawable/ic_play"
+                app:tint="@color/color_text_on_media" />
+
+            <TextView
+                android:id="@+id/text_number"
+                style="@style/AppTreino.Text.Label"
+                android:layout_width="@dimen/index_badge_size"
+                android:layout_height="@dimen/index_badge_size"
+                android:layout_margin="@dimen/space_xs"
+                android:background="@drawable/bg_index_badge"
+                android:gravity="center"
+                android:textColor="@color/color_text_on_media"
+                tools:text="1" />
+        </FrameLayout>
+
+        <Space
+            android:layout_width="@dimen/space_md"
+            android:layout_height="match_parent" />
+
+        <!-- Informações do exercício -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Grupo muscular: pode quebrar em 2 linhas em vez de ser cortado -->
+            <TextView
+                android:id="@+id/text_muscle"
+                style="@style/AppTreino.Text.Overline.Compact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                tools:text="Peitoral superior" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xxs" />
+
+            <TextView
+                android:id="@+id/text_name"
+                style="@style/AppTreino.Text.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="Supino reto com barra" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xs" />
+
+            <TextView
+                android:id="@+id/text_prescription"
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text_primary"
+                tools:text="4 × 8–10 · 40 kg" />
+
+            <!-- Descanso: ícone de cronômetro + tempo curto (ex.: "1 min 30 s") -->
+            <TextView
+                android:id="@+id/text_rest"
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/space_xs"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                app:drawableStartCompat="@drawable/ic_timer_small"
+                app:drawableTint="@color/color_text_secondary"
+                tools:text="1 min 30 s" />
+
+            <!-- Séries registradas (só aparece com o exercício pela metade) -->
+            <TextView
+                android:id="@+id/text_sets_progress"
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_accent"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="2 de 4 séries registradas"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <!-- Botão de concluir (área de toque de 48dp) -->
+        <FrameLayout
+            android:id="@+id/button_done"
+            android:layout_width="@dimen/touch_target"
+            android:layout_height="@dimen/touch_target"
+            android:layout_marginStart="@dimen/space_xs"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/image_done"
+                android:layout_width="@dimen/check_button_size"
+                android:layout_height="@dimen/check_button_size"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_check_button"
+                android:importantForAccessibility="no"
+                android:padding="@dimen/check_icon_padding"
+                android:src="@drawable/ic_check"
+                app:tint="@color/selector_check_icon" />
+        </FrameLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

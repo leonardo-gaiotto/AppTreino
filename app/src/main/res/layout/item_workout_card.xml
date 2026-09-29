@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Um treino na aba "Treinos" do painel do aluno, com ações de editar e excluir. -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_workout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_md"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/space_lg"
+        android:paddingTop="@dimen/space_lg"
+        android:paddingEnd="@dimen/space_xs"
+        android:paddingBottom="@dimen/space_lg">
+
+        <TextView
+            android:id="@+id/text_letter"
+            style="@style/AppTreino.Text.Headline"
+            android:layout_width="@dimen/letter_badge_size"
+            android:layout_height="@dimen/letter_badge_size"
+            android:background="@drawable/bg_rounded_accent"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:textColor="@color/color_on_accent"
+            tools:text="A" />
+
+        <Space
+            android:layout_width="@dimen/space_md"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_title"
+                style="@style/AppTreino.Text.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Treino A" />
+
+            <TextView
+                android:id="@+id/text_name"
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text_primary"
+                tools:text="Peito, ombros e tríceps" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xs" />
+
+            <TextView
+                android:id="@+id/text_days"
+                style="@style/AppTreino.Text.Overline.Compact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Seg · Qui" />
+
+            <TextView
+                android:id="@+id/text_meta"
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="7 exercícios · 1 cardio · ~60 min" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/button_edit"
+            android:layout_width="@dimen/touch_target"
+            android:layout_height="@dimen/touch_target"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/space_md"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_edit"
+            app:tint="@color/color_text_secondary"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/button_delete"
+            android:layout_width="@dimen/touch_target"
+            android:layout_height="@dimen/touch_target"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/space_md"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/color_error"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

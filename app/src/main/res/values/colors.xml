@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Paleta do tema CLARO (alternativo).
+    O tema escuro, padrão do app, sobrescreve estas cores em values-night/colors.xml.
+    As cores de marca (lime) e da splash não mudam entre os temas.
+-->
+<resources>
+    <!-- Marca -->
+    <color name="brand_lime">#FFC6FF3D</color>
+    <color name="brand_ink">#FF0B0C0F</color>
+    <color name="splash_background">#FF0B0C0F</color>
+
+    <!-- Superfícies -->
+    <color name="color_background">#FFF4F5F7</color>
+    <color name="color_surface">#FFFFFFFF</color>
+    <color name="color_surface_variant">#FFECEEF2</color>
+    <color name="color_outline">#FFDADDE3</color>
+
+    <!-- Texto -->
+    <color name="color_text_primary">#FF111318</color>
+    <color name="color_text_secondary">#FF5B6270</color>
+    <color name="color_text_on_media">#FFFFFFFF</color>
+
+    <!-- Destaque: no claro usamos um verde mais escuro para garantir contraste de texto -->
+    <color name="color_accent">#FF4A7300</color>
+    <color name="color_accent_container">#FFC6FF3D</color>
+    <color name="color_on_accent">#FF0B0C0F</color>
+    <color name="color_accent_soft">#FFEEF8D9</color>
+
+    <!-- Alertas (erros comuns) -->
+    <color name="color_error">#FFD23B3B</color>
+    <color name="color_error_soft">#FFFCEBEB</color>
+
+    <!-- Aviso (abaixo do previsto / queda de carga) -->
+    <color name="color_warning">#FFC75F00</color>
+    <color name="color_warning_soft">#FFFFF1E0</color>
+
+    <!-- Avatares dos alunos (fixos nos dois temas) -->
+    <color name="avatar_1">#FFC6FF3D</color>
+    <color name="avatar_2">#FF7DD3FC</color>
+    <color name="avatar_3">#FFFDBA74</color>
+    <color name="avatar_4">#FFC4B5FD</color>
+    <color name="avatar_5">#FFF9A8D4</color>
+
+    <!-- Sobreposições sobre imagens -->
+    <color name="color_scrim_strong">#CC0B0C0F</color>
+    <color name="color_scrim_light">#660B0C0F</color>
+    <color name="color_transparent">#00000000</color>
+</resources>

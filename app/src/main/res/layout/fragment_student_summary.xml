@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Aba "Resumo" do painel do aluno. -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.StudentSummaryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_padding">
+
+        <!-- Semana e sequência -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/stat_week"
+                layout="@layout/view_stat_tile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Space
+                android:layout_width="@dimen/space_sm"
+                android:layout_height="match_parent" />
+
+            <include
+                android:id="@+id/stat_streak"
+                layout="@layout/view_stat_tile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Space
+                android:layout_width="@dimen/space_sm"
+                android:layout_height="match_parent" />
+
+            <include
+                android:id="@+id/stat_total"
+                layout="@layout/view_stat_tile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_xl" />
+
+        <!-- Treino de hoje -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_xl">
+
+                <TextView
+                    style="@style/AppTreino.Text.Overline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/summary_today" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_sm" />
+
+                <TextView
+                    android:id="@+id/text_today_title"
+                    style="@style/AppTreino.Text.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Treino A · Peito, ombros e tríceps" />
+
+                <TextView
+                    android:id="@+id/text_today_detail"
+                    style="@style/AppTreino.Text.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="3 de 8 atividades" />
+
+                <Space
+                    android:id="@+id/space_today_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_md" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress_today"
+                    style="@style/Widget.AppTreino.ProgressIndicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    tools:progress="40" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_xl" />
+
+        <!-- Dados físicos -->
+        <TextView
+            style="@style/AppTreino.Text.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/summary_data" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_md" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/space_xs"
+                android:paddingBottom="@dimen/space_xs">
+
+                <include
+                    android:id="@+id/row_goal"
+                    layout="@layout/view_info_row" />
+
+                <include
+                    android:id="@+id/row_age"
+                    layout="@layout/view_info_row" />
+
+                <include
+                    android:id="@+id/row_weight"
+                    layout="@layout/view_info_row" />
+
+                <include
+                    android:id="@+id/row_height"
+                    layout="@layout/view_info_row" />
+
+                <include
+                    android:id="@+id/row_bmi"
+                    layout="@layout/view_info_row" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Observações (opcional) -->
+        <LinearLayout
+            android:id="@+id/layout_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/space_xl"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.AppTreino.Card.Accent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_lg">
+
+                    <TextView
+                        style="@style/AppTreino.Text.Overline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/summary_notes" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_sm" />
+
+                    <TextView
+                        android:id="@+id/text_notes"
+                        style="@style/AppTreino.Text.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingMultiplier="1.15"
+                        tools:text="Dor leve no joelho direito: evitar impacto." />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Aba "Alunos" (modo Coach): busca por nome, lista de alunos e botão de cadastro. -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.students.StudentsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        android:stateListAnimator="@null"
+        app:liftOnScroll="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingTop="@dimen/space_xl"
+            android:paddingEnd="@dimen/screen_padding"
+            android:paddingBottom="@dimen/space_md"
+            app:layout_scrollFlags="scroll">
+
+            <TextView
+                style="@style/AppTreino.Text.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/students_overline" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xs" />
+
+            <TextView
+                style="@style/AppTreino.Text.Display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/students_title" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xs" />
+
+            <TextView
+                android:id="@+id/text_students_subtitle"
+                style="@style/AppTreino.Text.BodySecondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="5 alunos · toque em um aluno para abrir o painel" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_lg" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_search"
+                style="@style/Widget.AppTreino.TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/students_search_hint"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_search">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textPersonName"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_students"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingTop="@dimen/space_xs"
+            android:paddingEnd="@dimen/screen_padding"
+            android:paddingBottom="@dimen/fab_list_bottom_padding"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_student" />
+
+        <TextView
+            android:id="@+id/text_empty"
+            style="@style/AppTreino.Text.BodySecondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="@dimen/space_xxxl"
+            android:paddingTop="@dimen/space_huge"
+            android:paddingEnd="@dimen/space_xxxl"
+            android:text="@string/students_empty"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_new_student"
+        style="@style/Widget.AppTreino.Fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/space_lg"
+        android:text="@string/action_new_student"
+        app:icon="@drawable/ic_add" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

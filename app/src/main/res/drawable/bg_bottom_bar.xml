@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Superfície com uma linha fina no topo, usada na barra de ações fixa. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/color_outline" />
+        </shape>
+    </item>
+    <item android:top="@dimen/divider_height">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/color_surface" />
+        </shape>
+    </item>
+</layer-list>

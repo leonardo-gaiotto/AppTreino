@@ -1,0 +1,12 @@
+# Normaliza fins de linha no repositório
+* text=auto
+
+# Scripts do Gradle Wrapper: LF no Mac/Linux (senão o ./gradlew quebra) e CRLF no Windows
+gradlew text eol=lf
+*.bat text eol=crlf
+
+# Binários
+*.jar binary
+*.png binary
+*.webp binary
+*.jpg binary

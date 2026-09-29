@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout genérico de lista usado pelas abas "Treinos" e "Evolução" do painel:
+    RecyclerView + mensagem de lista vazia + botão flutuante opcional.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingTop="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding"
+        android:paddingBottom="@dimen/fab_list_bottom_padding"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_workout_card" />
+
+    <TextView
+        android:id="@+id/text_empty"
+        style="@style/AppTreino.Text.BodySecondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingStart="@dimen/space_xxxl"
+        android:paddingTop="@dimen/space_huge"
+        android:paddingEnd="@dimen/space_xxxl"
+        android:visibility="gone"
+        tools:text="@string/workouts_empty" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab"
+        style="@style/Widget.AppTreino.Fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/space_lg"
+        android:visibility="gone"
+        app:icon="@drawable/ic_add"
+        tools:text="@string/action_new_workout"
+        tools:visibility="visible" />
+</FrameLayout>

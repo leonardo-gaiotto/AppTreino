@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Degradê sobre a miniatura grande: melhora a leitura do botão voltar e dá profundidade. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:centerColor="@color/color_transparent"
+        android:endColor="@color/color_scrim_strong"
+        android:startColor="@color/color_scrim_light" />
+</shape>

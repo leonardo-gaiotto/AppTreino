@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Painel do aluno (modo Coach), aberto por Intent explícita.
+    Cabeçalho fixo + abas (TabLayout) com 3 Fragments em um ViewPager2:
+    Resumo, Treinos e Evolução.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.dashboard.StudentDashboardActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.AppTreino.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/dashboard_title" />
+
+    <!-- Cabeçalho do aluno -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding"
+        android:paddingBottom="@dimen/space_lg">
+
+        <TextView
+            android:id="@+id/text_avatar"
+            style="@style/AppTreino.Text.Headline"
+            android:layout_width="@dimen/letter_badge_size"
+            android:layout_height="@dimen/letter_badge_size"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            tools:background="@drawable/bg_circle_accent"
+            tools:text="L" />
+
+        <Space
+            android:layout_width="@dimen/space_lg"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_name"
+                style="@style/AppTreino.Text.Headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Leonardo" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xs" />
+
+            <TextView
+                android:id="@+id/text_goal"
+                style="@style/AppTreino.Text.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Hipertrofia" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        style="@style/Widget.AppTreino.TabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/color_outline" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

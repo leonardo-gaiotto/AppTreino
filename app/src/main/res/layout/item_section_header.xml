@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Título de seção dentro de uma lista (ex.: "Cardio" na aba Hoje). -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_section_title"
+    style="@style/AppTreino.Text.TitleLarge"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/space_md"
+    android:paddingBottom="@dimen/space_md"
+    tools:text="@string/today_cardio_header" />

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Estilos reutilizáveis: tipografia e componentes. Centralizar aqui evita repetição nos layouts. -->
+<resources>
+
+    <!-- ===================== Tipografia ===================== -->
+
+    <style name="AppTreino.Text" parent="">
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="AppTreino.Text.Display">
+        <item name="android:textSize">@dimen/text_display</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="AppTreino.Text.Headline">
+        <item name="android:textSize">@dimen/text_headline</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+
+    <style name="AppTreino.Text.TitleLarge">
+        <item name="android:textSize">@dimen/text_title_large</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTreino.Text.Title">
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="AppTreino.Text.Body" />
+
+    <style name="AppTreino.Text.BodySecondary">
+        <item name="android:textColor">@color/color_text_secondary</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+    </style>
+
+    <style name="AppTreino.Text.Caption">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:textColor">@color/color_text_secondary</item>
+    </style>
+
+    <style name="AppTreino.Text.Overline">
+        <item name="android:textSize">@dimen/text_label</item>
+        <item name="android:textColor">@color/color_accent</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="AppTreino.Text.Label">
+        <item name="android:textSize">@dimen/text_label</item>
+        <item name="android:textColor">@color/color_text_secondary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="AppTreino.Text.StatValue">
+        <item name="android:textSize">@dimen/text_stat_value</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+
+    <!-- Overline com menos espaçamento entre letras, para textos longos em cards estreitos -->
+    <style name="AppTreino.Text.Overline.Compact">
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <!-- Mensagem de erro de validação -->
+    <style name="AppTreino.Text.Error">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:textColor">@color/color_error</item>
+        <item name="android:paddingTop">@dimen/space_xs</item>
+    </style>
+
+    <!-- Caixa de lista vazia (ex.: "Nenhum exercício ainda") -->
+    <style name="AppTreino.Text.EmptyBox">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:textColor">@color/color_text_secondary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_rounded_surface_variant</item>
+        <item name="android:padding">@dimen/space_lg</item>
+    </style>
+
+    <!-- Selo de comparação (acima / no alvo / abaixo do previsto); a cor vem do código -->
+    <style name="AppTreino.Text.DeltaChip">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/bg_chip_accent</item>
+        <item name="android:paddingStart">@dimen/space_md</item>
+        <item name="android:paddingEnd">@dimen/space_md</item>
+        <item name="android:paddingTop">@dimen/space_xxs</item>
+        <item name="android:paddingBottom">@dimen/space_xxs</item>
+    </style>
+
+    <!-- Texto das abas -->
+    <style name="AppTreino.Text.Tab">
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Selo com fundo verde-limão suave (ex.: grupo muscular) -->
+    <style name="AppTreino.Text.Chip">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:textColor">@color/color_accent</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:background">@drawable/bg_chip_accent</item>
+        <item name="android:paddingStart">@dimen/space_md</item>
+        <item name="android:paddingEnd">@dimen/space_md</item>
+        <item name="android:paddingTop">@dimen/space_xs</item>
+        <item name="android:paddingBottom">@dimen/space_xs</item>
+    </style>
+
+    <!-- ===================== Componentes ===================== -->
+
+    <style name="Widget.AppTreino.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/color_surface</item>
+        <item name="cardCornerRadius">@dimen/radius_card</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/color_outline</item>
+        <item name="strokeWidth">@dimen/stroke_thin</item>
+    </style>
+
+    <!-- Card destacado (observação do coach, resumo de progresso) -->
+    <!-- Card destacado: mesmo fundo escuro dos demais, com borda verde-limão -->
+    <style name="Widget.AppTreino.Card.Accent">
+        <item name="strokeColor">@color/color_accent</item>
+    </style>
+
+    <!-- Barra superior das telas secundárias (voltar + título) -->
+    <style name="Widget.AppTreino.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="navigationIcon">@drawable/ic_arrow_back</item>
+        <item name="navigationIconTint">@color/color_text_primary</item>
+        <item name="navigationContentDescription">@string/cd_back</item>
+        <item name="titleTextAppearance">@style/AppTreino.Text.TitleLarge</item>
+        <item name="titleTextColor">@color/color_text_primary</item>
+        <item name="android:background">@color/color_transparent</item>
+    </style>
+
+    <!-- Campos de texto com contorno e cantos arredondados -->
+    <style name="Widget.AppTreino.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_medium</item>
+        <item name="boxStrokeColor">@color/selector_input_stroke</item>
+        <item name="hintTextColor">@color/color_accent</item>
+        <item name="startIconTint">@color/color_text_secondary</item>
+        <item name="endIconTint">@color/color_text_secondary</item>
+    </style>
+
+    <!-- Chips de escolha: verde-limão quando selecionados -->
+    <style name="Widget.AppTreino.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/selector_chip_background</item>
+        <item name="android:textColor">@color/selector_chip_text</item>
+        <item name="checkedIconTint">@color/color_on_accent</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipMinTouchTargetSize">@dimen/touch_target</item>
+    </style>
+
+    <!-- Botões do seletor Aluno | Coach (MaterialButtonToggleGroup) -->
+    <style name="Widget.AppTreino.Button.Toggle" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/color_outline</item>
+        <item name="cornerRadius">@dimen/radius_medium</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Botão flutuante verde-limão -->
+    <style name="Widget.AppTreino.Fab" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
+        <item name="backgroundTint">@color/brand_lime</item>
+        <item name="android:textColor">@color/color_on_accent</item>
+        <item name="iconTint">@color/color_on_accent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Abas do painel do aluno -->
+    <style name="Widget.AppTreino.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="android:background">@color/color_transparent</item>
+        <item name="tabIndicatorColor">@color/brand_lime</item>
+        <item name="tabSelectedTextColor">@color/color_text_primary</item>
+        <item name="tabTextColor">@color/color_text_secondary</item>
+        <item name="tabTextAppearance">@style/AppTreino.Text.Tab</item>
+    </style>
+
+    <!-- Barra inferior com a mesma cor dos cards e indicador verde-limão -->
+    <style name="Widget.AppTreino.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">@color/color_surface</item>
+        <item name="android:elevation">0dp</item>
+        <item name="elevation">0dp</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.AppTreino.BottomNavigation.ActiveIndicator</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemTextColor">@color/selector_bottom_nav_text</item>
+    </style>
+
+    <style name="Widget.AppTreino.BottomNavigation.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/brand_lime</item>
+    </style>
+
+    <!-- Botão principal (verde-limão) -->
+    <style name="Widget.AppTreino.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/brand_lime</item>
+        <item name="android:textColor">@color/color_on_accent</item>
+        <item name="iconTint">@color/color_on_accent</item>
+        <item name="cornerRadius">@dimen/radius_medium</item>
+        <item name="android:minHeight">@dimen/bottom_bar_button_height</item>
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- Botão secundário com contorno -->
+    <style name="Widget.AppTreino.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/color_outline</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="iconTint">@color/color_text_primary</item>
+        <item name="cornerRadius">@dimen/radius_medium</item>
+        <item name="android:minHeight">@dimen/bottom_bar_button_height</item>
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- Botão de texto (ações discretas) -->
+    <style name="Widget.AppTreino.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/color_accent</item>
+        <item name="iconTint">@color/color_accent</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.AppTreino.ProgressIndicator" parent="Widget.Material3.LinearProgressIndicator">
+        <item name="indicatorColor">@color/color_accent</item>
+        <item name="trackColor">@color/color_surface_variant</item>
+        <item name="trackThickness">@dimen/progress_track_thickness</item>
+        <item name="trackCornerRadius">@dimen/radius_pill</item>
+        <item name="trackStopIndicatorSize">0dp</item>
+        <item name="indicatorTrackGapSize">0dp</item>
+    </style>
+
+    <style name="Widget.AppTreino.ProgressIndicator.Small">
+        <item name="trackThickness">@dimen/progress_track_thickness_small</item>
+    </style>
+
+    <!-- Arredondamento das miniaturas (ShapeableImageView) -->
+    <style name="ShapeAppearance.AppTreino.Thumbnail" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_medium</item>
+    </style>
+
+    <style name="ShapeAppearance.AppTreino.Thumbnail.Small">
+        <item name="cornerSize">@dimen/radius_small</item>
+    </style>
+
+</resources>

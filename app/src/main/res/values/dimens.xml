@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Espaçamentos (escala de 4dp) -->
+    <dimen name="space_xxs">2dp</dimen>
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_sm">8dp</dimen>
+    <dimen name="space_md">12dp</dimen>
+    <dimen name="space_lg">16dp</dimen>
+    <dimen name="space_xl">20dp</dimen>
+    <dimen name="space_xxl">24dp</dimen>
+    <dimen name="space_xxxl">32dp</dimen>
+    <dimen name="space_huge">48dp</dimen>
+    <dimen name="space_md_negative">-12dp</dimen>
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="list_bottom_padding">24dp</dimen>
+
+    <!-- Tamanhos de texto -->
+    <dimen name="text_display">30sp</dimen>
+    <dimen name="text_headline">24sp</dimen>
+    <dimen name="text_title_large">20sp</dimen>
+    <dimen name="text_title">16sp</dimen>
+    <dimen name="text_body">15sp</dimen>
+    <dimen name="text_caption">13sp</dimen>
+    <dimen name="text_label">11sp</dimen>
+    <dimen name="text_stat_value">22sp</dimen>
+
+    <!-- Cantos e bordas -->
+    <dimen name="radius_card">20dp</dimen>
+    <dimen name="radius_medium">14dp</dimen>
+    <dimen name="radius_small">10dp</dimen>
+    <dimen name="radius_pill">100dp</dimen>
+    <dimen name="stroke_thin">1dp</dimen>
+    <dimen name="stroke_selected">2dp</dimen>
+    <dimen name="progress_track_thickness">8dp</dimen>
+    <dimen name="progress_track_thickness_small">4dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+
+    <!-- Ícones e áreas de toque -->
+    <dimen name="icon_small">16dp</dimen>
+    <dimen name="icon_large">24dp</dimen>
+    <dimen name="icon_huge">56dp</dimen>
+    <dimen name="touch_target">48dp</dimen>
+    <dimen name="check_button_size">40dp</dimen>
+    <dimen name="check_icon_padding">9dp</dimen>
+
+    <!-- Miniaturas de vídeo -->
+    <dimen name="thumbnail_card_width">100dp</dimen>
+    <dimen name="thumbnail_card_height">68dp</dimen>
+    <dimen name="thumbnail_hero_height">248dp</dimen>
+    <dimen name="play_button_small">32dp</dimen>
+    <dimen name="play_button_large">72dp</dimen>
+    <dimen name="play_icon_padding_small">7dp</dimen>
+    <dimen name="play_icon_padding_large">18dp</dimen>
+    <dimen name="index_badge_size">22dp</dimen>
+
+    <!-- Elementos diversos -->
+    <dimen name="avatar_large">84dp</dimen>
+    <dimen name="avatar_medium">48dp</dimen>
+    <dimen name="step_number_size">28dp</dimen>
+    <dimen name="stat_tile_min_height">76dp</dimen>
+    <dimen name="stat_value_height">30dp</dimen>
+    <dimen name="week_day_column_width">52dp</dimen>
+    <dimen name="bottom_bar_button_height">56dp</dimen>
+    <dimen name="back_button_size">44dp</dimen>
+    <dimen name="back_button_padding">10dp</dimen>
+    <dimen name="letter_badge_size">56dp</dimen>
+
+    <!-- Modo coach -->
+    <dimen name="thumbnail_small_width">64dp</dimen>
+    <dimen name="thumbnail_small_height">40dp</dimen>
+    <dimen name="thumbnail_catalog_height">58dp</dimen>
+    <dimen name="stepper_button_size">40dp</dimen>
+    <dimen name="fab_list_bottom_padding">96dp</dimen>
+    <dimen name="chart_sparkline_height">56dp</dimen>
+    <dimen name="chart_full_height">200dp</dimen>
+</resources>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Uma série no registro do aluno: o que o coach pediu ao lado do que o aluno fez.
+    Os valores vêm preenchidos com a prescrição; o aluno só ajusta com os botões − / +.
+-->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_set"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_sm">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_md">
+
+        <!-- Série e o que o coach pediu -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_set_number"
+                style="@style/AppTreino.Text.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Série 1" />
+
+            <TextView
+                android:id="@+id/text_coach_target"
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Coach: 8–10 × 40 kg" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_sm" />
+
+        <!-- O que o aluno fez: repetições, carga e botão de registrar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/stepper_reps"
+                layout="@layout/view_stepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Space
+                android:id="@+id/space_steppers"
+                android:layout_width="@dimen/space_sm"
+                android:layout_height="match_parent" />
+
+            <include
+                android:id="@+id/stepper_load"
+                layout="@layout/view_stepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <FrameLayout
+                android:id="@+id/button_register_set"
+                android:layout_width="@dimen/touch_target"
+                android:layout_height="@dimen/touch_target"
+                android:layout_marginStart="@dimen/space_sm"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/image_register_set"
+                    android:layout_width="@dimen/check_button_size"
+                    android:layout_height="@dimen/check_button_size"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_check_button"
+                    android:importantForAccessibility="no"
+                    android:padding="@dimen/check_icon_padding"
+                    android:src="@drawable/ic_check"
+                    app:tint="@color/selector_check_icon" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Comparação com o previsto (só depois de registrar) -->
+        <LinearLayout
+            android:id="@+id/layout_comparison"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/text_reps_delta"
+                style="@style/AppTreino.Text.DeltaChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="+2 reps" />
+
+            <Space
+                android:layout_width="@dimen/space_sm"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/text_load_delta"
+                style="@style/AppTreino.Text.DeltaChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="−2 kg" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bloco reutilizável "valor + legenda", incluído com <include> no Perfil e no detalhe
+    do exercício. O ViewBinding gera uma classe própria (ViewStatTileBinding) para ele.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="@drawable/bg_rounded_surface_variant"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/stat_tile_min_height"
+    android:orientation="vertical"
+    android:padding="@dimen/space_md">
+
+    <!-- Autosize: textos longos (ex.: "Peso corporal") diminuem para caber em uma linha -->
+    <TextView
+        android:id="@+id/text_value"
+        style="@style/AppTreino.Text.StatValue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stat_value_height"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        app:autoSizeMaxTextSize="@dimen/text_stat_value"
+        app:autoSizeMinTextSize="@dimen/text_caption"
+        app:autoSizeTextType="uniform"
+        tools:text="12" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_xxs" />
+
+    <TextView
+        android:id="@+id/text_label"
+        style="@style/AppTreino.Text.Label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Treinos concluídos" />
+</LinearLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Aba "Semana": resumo semanal no cabeçalho + lista dos 7 dias. -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.week.WeekFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        android:stateListAnimator="@null"
+        app:liftOnScroll="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingTop="@dimen/space_xl"
+            android:paddingEnd="@dimen/screen_padding"
+            android:paddingBottom="@dimen/space_lg"
+            app:layout_scrollFlags="scroll">
+
+            <TextView
+                style="@style/AppTreino.Text.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/week_overline" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xs" />
+
+            <TextView
+                style="@style/AppTreino.Text.Display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/week_title" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xs" />
+
+            <TextView
+                style="@style/AppTreino.Text.BodySecondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/week_subtitle" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xl" />
+
+            <!-- Mesmo estilo escuro dos demais cards -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_xl">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/AppTreino.Text.Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/week_summary_title" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_xs" />
+
+                            <TextView
+                                android:id="@+id/text_week_summary"
+                                style="@style/AppTreino.Text.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="2 de 6 treinos concluídos" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/text_week_percent"
+                            style="@style/AppTreino.Text.StatValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color_accent"
+                            tools:text="33%" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_md" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progress_week"
+                        style="@style/Widget.AppTreino.ProgressIndicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        tools:progress="33" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_days"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding"
+        android:paddingBottom="@dimen/list_bottom_padding"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:itemCount="7"
+        tools:listitem="@layout/item_week_day" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

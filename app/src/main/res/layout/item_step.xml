@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Um passo numerado do "Passo a passo" (inflado dinamicamente no detalhe). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/space_md">
+
+    <TextView
+        android:id="@+id/text_step_number"
+        style="@style/AppTreino.Text.Caption"
+        android:layout_width="@dimen/step_number_size"
+        android:layout_height="@dimen/step_number_size"
+        android:background="@drawable/bg_circle_accent_soft"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:textColor="@color/color_accent"
+        android:textStyle="bold"
+        tools:text="1" />
+
+    <Space
+        android:layout_width="@dimen/space_md"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/text_step"
+        style="@style/AppTreino.Text.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:lineSpacingMultiplier="1.15"
+        android:paddingTop="@dimen/space_xs"
+        tools:text="Deite no banco com os olhos alinhados à barra e os pés firmes no chão." />
+</LinearLayout>

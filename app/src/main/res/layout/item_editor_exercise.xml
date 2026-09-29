@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Exercício no editor de treino: arrastar para reordenar, tocar para editar, X para remover. -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_editor_exercise"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_sm"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/space_sm"
+        android:paddingBottom="@dimen/space_sm">
+
+        <!-- Alça de arrastar -->
+        <ImageView
+            android:id="@+id/image_drag_handle"
+            android:layout_width="@dimen/touch_target"
+            android:layout_height="@dimen/touch_target"
+            android:padding="@dimen/space_md"
+            android:src="@drawable/ic_drag_handle"
+            app:tint="@color/color_text_secondary"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_thumbnail"
+            android:layout_width="@dimen/thumbnail_small_width"
+            android:layout_height="@dimen/thumbnail_small_height"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.AppTreino.Thumbnail.Small"
+            tools:src="@drawable/placeholder_thumbnail" />
+
+        <Space
+            android:layout_width="@dimen/space_md"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_name"
+                style="@style/AppTreino.Text.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="Supino reto com barra" />
+
+            <TextView
+                android:id="@+id/text_prescription"
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="4 × 8–10 · 40 kg · 1 min 30 s" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/button_remove"
+            android:layout_width="@dimen/touch_target"
+            android:layout_height="@dimen/touch_target"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/space_md"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_close"
+            app:tint="@color/color_text_secondary"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

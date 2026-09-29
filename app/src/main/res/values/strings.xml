@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppTreino</string>
+
+    <!-- ============================================================
+         Navegação
+         ============================================================ -->
+    <string name="nav_today">Hoje</string>
+    <string name="nav_week">Semana</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="nav_students">Alunos</string>
+
+    <!-- ============================================================
+         Datas (sem depender do idioma do aparelho)
+         ============================================================ -->
+    <string name="date_full">%1$s, %2$d de %3$s</string>
+
+    <string-array name="week_days_full">
+        <item>segunda-feira</item>
+        <item>terça-feira</item>
+        <item>quarta-feira</item>
+        <item>quinta-feira</item>
+        <item>sexta-feira</item>
+        <item>sábado</item>
+        <item>domingo</item>
+    </string-array>
+
+    <string-array name="week_days_short">
+        <item>SEG</item>
+        <item>TER</item>
+        <item>QUA</item>
+        <item>QUI</item>
+        <item>SEX</item>
+        <item>SÁB</item>
+        <item>DOM</item>
+    </string-array>
+
+    <string-array name="months">
+        <item>janeiro</item>
+        <item>fevereiro</item>
+        <item>março</item>
+        <item>abril</item>
+        <item>maio</item>
+        <item>junho</item>
+        <item>julho</item>
+        <item>agosto</item>
+        <item>setembro</item>
+        <item>outubro</item>
+        <item>novembro</item>
+        <item>dezembro</item>
+    </string-array>
+
+    <!-- ============================================================
+         Formatação de prescrição (séries, repetições, carga, tempo)
+         ============================================================ -->
+    <string name="prescription_sets_reps">%1$d × %2$s</string>
+    <string name="prescription_summary">%1$s · %2$s</string>
+    <string name="reps_range">%1$d–%2$d</string>
+    <string name="duration_seconds">%1$d s</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="duration_minutes_seconds">%1$d min %2$d s</string>
+    <string name="load_kg">%1$s kg</string>
+    <string name="load_kg_per_side">%1$s kg cada</string>
+    <string name="load_bodyweight">Peso corporal</string>
+    <string name="rest_label">Descanso de %1$s</string>
+    <string name="format_integer">%1$d</string>
+    <string name="fraction">%1$d/%2$d</string>
+    <string name="date_short">%1$02d/%2$02d</string>
+    <string name="minutes_approx">~%1$d min</string>
+    <string name="separator_dot">" · "</string>
+    <string name="workout_title">Treino %1$s</string>
+    <string name="cardio_summary">%1$s · %2$s</string>
+    <string name="set_value_with_load">%1$s × %2$s</string>
+    <string name="digits_decimal" translatable="false">0123456789,.</string>
+    <plurals name="exercise_count">
+        <item quantity="one">%d exercício</item>
+        <item quantity="other">%d exercícios</item>
+    </plurals>
+    <plurals name="cardio_count">
+        <item quantity="one">%d cardio</item>
+        <item quantity="other">%d cardios</item>
+    </plurals>
+    <plurals name="reps_value">
+        <item quantity="one">%d rep</item>
+        <item quantity="other">%d reps</item>
+    </plurals>
+
+    <string-array name="week_days_abbr">
+        <item>Seg</item>
+        <item>Ter</item>
+        <item>Qua</item>
+        <item>Qui</item>
+        <item>Sex</item>
+        <item>Sáb</item>
+        <item>Dom</item>
+    </string-array>
+
+    <!-- Unidades -->
+    <string name="unit_kg">kg</string>
+    <string name="unit_cm">cm</string>
+    <string name="unit_years">anos</string>
+    <string name="unit_seconds">s</string>
+    <string name="unit_minutes">min</string>
+    <string name="unit_reps">reps</string>
+    <string name="unit_time">tempo</string>
+    <plurals name="value_years">
+        <item quantity="one">%d ano</item>
+        <item quantity="other">%d anos</item>
+    </plurals>
+    <string name="value_cm">%1$d cm</string>
+
+    <!-- ============================================================
+         Tela: Treino de hoje
+         ============================================================ -->
+    <string name="today_title_today">Treino de hoje</string>
+    <string name="today_title_other_day">Treino de %1$s</string>
+    <!-- A quantidade usada para escolher o plural é o total (%2$d) -->
+    <plurals name="today_progress_count">
+        <item quantity="one">%1$d de %2$d atividade</item>
+        <item quantity="other">%1$d de %2$d atividades</item>
+    </plurals>
+    <string name="today_progress_percent">%1$d%%</string>
+    <string name="today_progress_not_started">Bora começar? Toque em um exercício para ver o vídeo e os detalhes.</string>
+    <plurals name="today_progress_remaining">
+        <item quantity="one">Continue assim: falta %d atividade.</item>
+        <item quantity="other">Continue assim: faltam %d atividades.</item>
+    </plurals>
+    <string name="today_progress_completed">Treino concluído! Mandou muito bem 💪</string>
+    <string name="today_back_to_today">Voltar para hoje</string>
+    <string name="today_reset_workout">Reiniciar treino</string>
+    <string name="today_exercises_header">Exercícios</string>
+    <string name="today_cardio_header">Cardio</string>
+    <!-- A quantidade usada para escolher o plural é o total de séries (%2$d) -->
+    <plurals name="sets_logged">
+        <item quantity="one">%1$d de %2$d série registrada</item>
+        <item quantity="other">%1$d de %2$d séries registradas</item>
+    </plurals>
+    <plurals name="sets_logged_short">
+        <item quantity="one">%1$d de %2$d série</item>
+        <item quantity="other">%1$d de %2$d séries</item>
+    </plurals>
+
+    <string name="rest_day_title">Dia de descanso</string>
+    <string name="rest_day_message">O descanso também faz parte do treino: é nele que o músculo se recupera e cresce. Hidrate-se, durma bem e volte com tudo amanhã.</string>
+    <string name="rest_day_action">Ver a semana</string>
+
+    <!-- ============================================================
+         Tela: Semana
+         ============================================================ -->
+    <string name="week_overline">Plano semanal</string>
+    <string name="week_title">Sua semana</string>
+    <string name="week_subtitle">Plano montado pelo seu coach. Toque em um dia para abrir o treino.</string>
+    <string name="week_summary_title">Progresso da semana</string>
+    <!-- A quantidade usada para escolher o plural é o total (%2$d) -->
+    <plurals name="week_summary_count">
+        <item quantity="one">%1$d de %2$d treino concluído</item>
+        <item quantity="other">%1$d de %2$d treinos concluídos</item>
+    </plurals>
+    <string name="week_day_rest_title">Descanso</string>
+    <string name="week_day_rest_detail">Recuperação: caminhada leve e alongamento</string>
+    <string name="week_day_workout_title">%1$s · %2$s</string>
+    <string name="week_status_done">Concluído</string>
+    <string name="week_status_today">Hoje</string>
+    <!-- A quantidade usada para escolher o plural é a de feitos (%1$d) -->
+    <plurals name="week_status_in_progress">
+        <item quantity="one">%1$d/%2$d feito</item>
+        <item quantity="other">%1$d/%2$d feitos</item>
+    </plurals>
+    <string name="week_status_upcoming">A fazer</string>
+    <string name="week_status_missed">Não realizado</string>
+    <string name="week_status_rest">Livre</string>
+
+    <!-- ============================================================
+         Tela: Perfil
+         ============================================================ -->
+    <string name="profile_mode_label">Usar o app como</string>
+    <string name="mode_student">Aluno</string>
+    <string name="mode_coach">Coach</string>
+    <string name="profile_student_subtitle">Aluno · %1$s</string>
+    <string name="profile_stat_workouts">Treinos concluídos</string>
+    <string name="profile_stat_exercises">Exercícios feitos</string>
+    <string name="profile_stat_active_days">Dias ativos na semana</string>
+
+    <string name="profile_coach_overline">Seu coach</string>
+    <string name="coach_name">Rafael Moura</string>
+    <string name="coach_initials">RM</string>
+    <string name="coach_role">Personal trainer · Musculação e hipertrofia</string>
+    <string name="coach_message">“Constância vence intensidade. Faça o simples bem feito todos os dias e os resultados vêm.”</string>
+
+    <string name="profile_plan_title">Seu plano</string>
+    <string name="plan_goal_label">Objetivo</string>
+    <string name="plan_split_label">Divisão</string>
+    <string name="plan_split_none">Nenhum treino</string>
+    <string name="plan_frequency_label">Frequência</string>
+    <string name="plan_frequency_value">%1$dx por semana</string>
+
+    <string name="profile_stat_students">Alunos</string>
+    <string name="profile_stat_coach_workouts">Treinos montados</string>
+    <string name="profile_stat_week_average">Média da semana</string>
+    <string name="profile_coach_tip_title">Dica do modo coach</string>
+    <string name="profile_coach_tip">Na aba Alunos você acompanha a semana de cada aluno, monta e ajusta os treinos e vê a evolução das cargas. O que você muda aparece na hora no app do aluno.</string>
+
+    <string name="profile_settings_title">Preferências</string>
+    <string name="setting_dark_theme">Tema escuro</string>
+    <string name="setting_dark_theme_summary">Padrão do app: mais conforto no ambiente da academia</string>
+    <string name="setting_reset_demo">Restaurar dados de demonstração</string>
+    <string name="setting_reset_demo_summary">Volta alunos, treinos e registros ao estado inicial</string>
+    <string name="profile_version">Versão %1$s</string>
+
+    <!-- ============================================================
+         Diálogos e mensagens
+         ============================================================ -->
+    <string name="dialog_reset_demo_title">Restaurar a demonstração?</string>
+    <string name="dialog_reset_demo_message">Alunos, treinos e registros voltarão ao estado inicial. Como os dados ficam só na memória, isso também acontece ao fechar o app.</string>
+    <string name="dialog_reset_day_title">Reiniciar este treino?</string>
+    <string name="dialog_reset_day_message">Os exercícios e o cardio deste dia voltarão a ficar pendentes.</string>
+    <string name="dialog_delete_workout_title">Excluir o %1$s?</string>
+    <string name="dialog_delete_workout_message">O treino sai da semana do aluno. As cargas já registradas continuam na evolução.</string>
+    <string name="dialog_discard_title">Descartar alterações?</string>
+    <string name="dialog_discard_message">As mudanças neste treino ainda não foram salvas.</string>
+    <string name="action_restart">Reiniciar</string>
+    <string name="action_restore">Restaurar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_confirm">Salvar</string>
+    <string name="action_delete">Excluir</string>
+    <string name="action_discard">Descartar</string>
+    <string name="action_keep_editing">Continuar editando</string>
+    <string name="action_add">Adicionar</string>
+    <string name="message_workout_restarted">Treino reiniciado</string>
+    <string name="message_demo_restored">Dados de demonstração restaurados</string>
+    <string name="message_student_saved">Aluno cadastrado: %1$s</string>
+    <string name="message_workout_saved">Treino salvo</string>
+    <string name="message_workout_deleted">Treino excluído</string>
+    <string name="error_open_video">Não foi possível abrir o vídeo. Verifique se há um navegador instalado.</string>
+    <string name="error_exercise_not_found">Exercício não encontrado.</string>
+
+    <!-- ============================================================
+         Tela: Detalhe do exercício
+         ============================================================ -->
+    <string name="detail_position">Exercício %1$d de %2$d · %3$s</string>
+    <string name="stat_sets">Séries</string>
+    <string name="stat_reps">Repetições</string>
+    <string name="stat_duration">Tempo</string>
+    <string name="stat_load">Carga</string>
+    <string name="stat_rest">Descanso</string>
+    <string name="section_steps">Passo a passo</string>
+    <string name="section_mistakes">Erros comuns</string>
+    <string name="section_coach_note">Observação do coach</string>
+    <string name="action_watch_youtube">Assistir no YouTube</string>
+    <string name="action_mark_done">Marcar como feito</string>
+    <string name="action_done">Feito</string>
+    <string name="action_complete_exercise">Concluir exercício</string>
+
+    <!-- Registro das séries (coach × aluno) -->
+    <string name="section_log">Seu registro</string>
+    <string name="section_log_hint">Já vem com o que o coach passou. Ajuste com − e + e toque em ✓ ao terminar cada série.</string>
+    <string name="set_number">Série %1$d</string>
+    <string name="set_coach_target">Coach: %1$s</string>
+    <string name="delta_reps_on_target">✓ Reps no alvo</string>
+    <string name="delta_time_on_target">✓ Tempo no alvo</string>
+    <string name="delta_load_on_target">✓ Carga no alvo</string>
+    <plurals name="delta_reps_up">
+        <item quantity="one">↑ +%d rep</item>
+        <item quantity="other">↑ +%d reps</item>
+    </plurals>
+    <plurals name="delta_reps_down">
+        <item quantity="one">↓ −%d rep</item>
+        <item quantity="other">↓ −%d reps</item>
+    </plurals>
+    <string name="delta_seconds_up">↑ +%1$d s</string>
+    <string name="delta_seconds_down">↓ −%1$d s</string>
+    <string name="delta_load_up">↑ +%1$s kg</string>
+    <string name="delta_load_down">↓ −%1$s kg</string>
+
+    <!-- ============================================================
+         Acessibilidade (content descriptions)
+         ============================================================ -->
+    <string name="cd_back">Voltar</string>
+    <string name="cd_mark_done">Marcar %1$s como feito</string>
+    <string name="cd_mark_not_done">Desmarcar %1$s</string>
+    <string name="cd_play_video">Assistir ao vídeo de %1$s</string>
+    <string name="cd_video_thumbnail">Miniatura do vídeo de %1$s</string>
+    <string name="cd_decrease_reps">Diminuir repetições da série %1$d</string>
+    <string name="cd_increase_reps">Aumentar repetições da série %1$d</string>
+    <string name="cd_decrease_load">Diminuir carga da série %1$d</string>
+    <string name="cd_increase_load">Aumentar carga da série %1$d</string>
+    <string name="cd_register_set">Registrar a série %1$d</string>
+    <string name="cd_unregister_set">Desfazer o registro da série %1$d</string>
+    <string name="cd_edit_workout">Editar %1$s</string>
+    <string name="cd_delete_workout">Excluir %1$s</string>
+    <string name="cd_reorder">Arrastar para reordenar %1$s</string>
+    <string name="cd_remove">Remover %1$s</string>
+    <string name="cd_add_exercise">Adicionar %1$s ao treino</string>
+    <string name="cd_evolution_chart">Gráfico de evolução de %1$s: %2$s desde a primeira sessão</string>
+
+    <!-- ============================================================
+         Modo coach: aba Alunos
+         ============================================================ -->
+    <string name="students_overline">Modo coach</string>
+    <string name="students_title">Seus alunos</string>
+    <string name="students_search_hint">Buscar aluno pelo nome</string>
+    <string name="students_empty">Nenhum aluno encontrado com esse nome.</string>
+    <string name="action_new_student">Novo aluno</string>
+    <plurals name="students_subtitle">
+        <item quantity="one">%d aluno · toque para abrir o painel</item>
+        <item quantity="other">%d alunos · toque para abrir o painel</item>
+    </plurals>
+    <string name="student_today_workout">Hoje: %1$s (%2$d/%3$d)</string>
+    <string name="student_today_rest">Hoje: dia de descanso</string>
+    <!-- A quantidade usada para escolher o plural é o total (%2$d) -->
+    <plurals name="student_week_progress">
+        <item quantity="one">%1$d de %2$d treino na semana</item>
+        <item quantity="other">%1$d de %2$d treinos na semana</item>
+    </plurals>
+
+    <!-- ============================================================
+         Modo coach: cadastro de aluno
+         ============================================================ -->
+    <string name="student_form_title">Novo aluno</string>
+    <string name="student_form_subtitle">Preencha os dados do aluno. Depois é só montar os treinos no painel dele.</string>
+    <string name="field_name">Nome completo</string>
+    <string name="field_goal">Objetivo</string>
+    <string name="field_age">Idade</string>
+    <string name="field_weight">Peso</string>
+    <string name="field_height">Altura</string>
+    <string name="field_bmi">IMC</string>
+    <string name="field_notes_optional">Observações (opcional)</string>
+    <string name="action_save_student">Cadastrar aluno</string>
+
+    <!-- ============================================================
+         Modo coach: painel do aluno
+         ============================================================ -->
+    <string name="dashboard_title">Painel do aluno</string>
+    <string name="tab_summary">Resumo</string>
+    <string name="tab_workouts">Treinos</string>
+    <string name="tab_evolution">Evolução</string>
+    <string name="summary_today">Hoje</string>
+    <string name="summary_data">Dados do aluno</string>
+    <string name="summary_notes">Observações</string>
+    <string name="summary_rest_detail">Sem treino programado para hoje.</string>
+    <string name="summary_stat_week">Treinos na semana</string>
+    <string name="summary_stat_streak">Treinos seguidos</string>
+    <string name="summary_stat_total">Treinos concluídos</string>
+    <string name="workouts_empty">Este aluno ainda não tem treinos. Toque em Novo treino para montar o primeiro.</string>
+    <string name="action_new_workout">Novo treino</string>
+    <string name="evolution_empty">Nenhum exercício registrado ainda. A evolução aparece conforme o aluno registra as séries.</string>
+    <string name="metric_load">Carga máxima</string>
+    <string name="metric_reps">Repetições máximas</string>
+    <string name="metric_seconds">Tempo máximo</string>
+    <!-- A quantidade usada para escolher o plural é a de sessões (%2$d) -->
+    <plurals name="evolution_metric_sessions">
+        <item quantity="one">%1$s · %2$d sessão</item>
+        <item quantity="other">%1$s · %2$d sessões</item>
+    </plurals>
+    <string name="delta_positive">+%1$s</string>
+    <string name="delta_negative">−%1$s</string>
+    <string name="delta_none">Sem variação</string>
+
+    <string name="history_title">Evolução do exercício</string>
+    <string name="history_metric_subtitle">%1$s por sessão</string>
+    <string name="history_stat_current">Atual</string>
+    <string name="history_stat_change">Variação</string>
+    <string name="history_stat_sessions">Sessões</string>
+    <string name="history_chart_title">Evolução</string>
+    <string name="history_sessions_title">Sessões registradas</string>
+
+    <!-- ============================================================
+         Modo coach: editor de treino, catálogo e formulários
+         ============================================================ -->
+    <string name="editor_title_new">Novo treino</string>
+    <string name="editor_title_edit">Editar treino</string>
+    <string name="editor_student">Treino de %1$s</string>
+    <string name="field_workout_name">Nome do treino</string>
+    <string name="field_workout_name_helper">Ex.: Peito, ombros e tríceps</string>
+    <string name="editor_days_title">Dias da semana</string>
+    <string name="editor_days_helper">Um treino por dia. Dias marcados com a letra de outro treino já estão ocupados.</string>
+    <string name="editor_day_taken">%1$s · %2$s</string>
+    <string name="editor_exercises_title">Exercícios</string>
+    <string name="editor_exercises_helper">Toque para editar · arraste pela alça para reordenar</string>
+    <string name="editor_exercises_empty">Nenhum exercício ainda. Toque em Adicionar para escolher no catálogo.</string>
+    <string name="editor_cardio_title">Cardio</string>
+    <string name="editor_cardio_empty">Nenhum cardio neste treino (opcional).</string>
+    <string name="action_save_workout">Salvar treino</string>
+
+    <string name="catalog_title">Catálogo de exercícios</string>
+    <string name="catalog_search_hint">Buscar exercício</string>
+    <string name="catalog_filter_all">Todos</string>
+    <string name="catalog_empty">Nenhum exercício encontrado.</string>
+
+    <string name="field_sets">Séries</string>
+    <string name="field_reps_min">Reps mín.</string>
+    <string name="field_reps_max">Reps máx.</string>
+    <string name="field_seconds">Tempo por série</string>
+    <string name="field_load">Carga</string>
+    <string name="field_rest">Descanso</string>
+    <string name="field_body_weight">Peso corporal (sem carga)</string>
+    <string name="field_per_side">Carga em cada halter ou lado</string>
+    <string name="field_coach_note_optional">Observação do coach (opcional)</string>
+
+    <string name="cardio_sheet_title">Cardio</string>
+    <string name="field_cardio_type">Tipo</string>
+    <string name="field_duration">Duração</string>
+    <string name="field_intensity">Intensidade</string>
+
+    <!-- ============================================================
+         Validações
+         ============================================================ -->
+    <string name="error_required">Campo obrigatório</string>
+    <string name="error_invalid_number">Número inválido</string>
+    <string name="error_name_short">Informe pelo menos 3 letras</string>
+    <string name="error_goal_required">Escolha um objetivo</string>
+    <string name="error_age_range">Entre 10 e 100 anos</string>
+    <string name="error_weight_range">Entre 30 e 300 kg</string>
+    <string name="error_height_range">Entre 100 e 250 cm</string>
+    <string name="error_sets_range">Entre 1 e 10</string>
+    <string name="error_reps_range">Entre 1 e 100</string>
+    <string name="error_reps_max_lower">Menor que o mínimo</string>
+    <string name="error_seconds_range">Entre 5 e 600 s</string>
+    <string name="error_load_range">Entre 0,5 e 500 kg</string>
+    <string name="error_rest_range">Entre 0 e 600 s</string>
+    <string name="error_duration_range">Entre 1 e 180 min</string>
+    <string name="error_cardio_type">Escolha o tipo de cardio</string>
+    <string name="error_intensity">Escolha a intensidade</string>
+    <string name="error_workout_name">Dê um nome ao treino</string>
+    <string name="error_workout_days">Escolha pelo menos um dia da semana</string>
+    <string name="error_workout_day_conflict">Algum dia escolhido já tem outro treino</string>
+    <string name="error_workout_empty">Adicione pelo menos um exercício ou cardio</string>
+
+    <!-- ============================================================
+         Opções (enums): objetivos, grupos musculares, cardio e intensidade
+         ============================================================ -->
+    <string name="goal_hypertrophy">Hipertrofia</string>
+    <string name="goal_weight_loss">Emagrecimento</string>
+    <string name="goal_conditioning">Condicionamento</string>
+    <string name="goal_strength">Força</string>
+    <string name="goal_health">Saúde</string>
+
+    <string name="group_chest">Peito</string>
+    <string name="group_back">Costas</string>
+    <string name="group_shoulders">Ombros</string>
+    <string name="group_biceps">Bíceps</string>
+    <string name="group_triceps">Tríceps</string>
+    <string name="group_legs">Pernas</string>
+    <string name="group_glutes">Glúteos</string>
+    <string name="group_calves">Panturrilha</string>
+    <string name="group_core">Abdômen</string>
+
+    <string name="cardio_treadmill">Esteira</string>
+    <string name="cardio_bike">Bicicleta</string>
+    <string name="cardio_elliptical">Elíptico</string>
+    <string name="cardio_stairs">Escada</string>
+    <string name="cardio_jump_rope">Corda</string>
+    <string name="cardio_rowing">Remo</string>
+
+    <string name="intensity_light">Leve</string>
+    <string name="intensity_moderate">Moderada</string>
+    <string name="intensity_high">Alta</string>
+
+    <!-- ============================================================
+         Dados de demonstração (alunos, treinos e observações)
+         ============================================================ -->
+    <string name="mock_student_leonardo">Leonardo</string>
+    <string name="mock_student_ana">Ana Souza</string>
+    <string name="mock_student_bruno">Bruno Lima</string>
+    <string name="mock_student_carla">Carla Mendes</string>
+    <string name="mock_student_diego">Diego Santos</string>
+
+    <string name="mock_notes_leonardo">Foco em ganhar massa magra. Treina à noite, depois da faculdade.</string>
+    <string name="mock_notes_ana">Dor leve no joelho direito: evitar impacto e saltos.</string>
+    <string name="mock_notes_diego">Hipertensão controlada: priorizar cargas moderadas e respiração contínua.</string>
+
+    <string name="mock_workout_push">Peito, ombros e tríceps</string>
+    <string name="mock_workout_pull">Costas e bíceps</string>
+    <string name="mock_workout_legs">Pernas e core</string>
+    <string name="mock_workout_full_body_1">Corpo todo · ênfase em pernas</string>
+    <string name="mock_workout_full_body_2">Corpo todo · ênfase em costas</string>
+    <string name="mock_workout_strength_conditioning">Força e condicionamento</string>
+    <string name="mock_workout_core_cardio">Core e cardio</string>
+    <string name="mock_workout_lower_push">Inferiores e empurrar</string>
+    <string name="mock_workout_posterior_pull">Posterior e puxar</string>
+    <string name="mock_workout_health">Saúde e mobilidade</string>
+
+    <string name="mock_cardio_note_finisher">Ao final do treino, num ritmo que ainda permita conversar.</string>
+    <string name="mock_cardio_note_knee">Elíptico no lugar da esteira para poupar o joelho.</string>
+    <string name="mock_cardio_note_walk">Caminhada em ritmo confortável, com leve inclinação.</string>
+    <string name="mock_note_carla_squat">Use o cinto nas duas últimas séries e peça ajuda de um parceiro.</string>
+
+    <!-- ============================================================
+         Grupos musculares
+         ============================================================ -->
+    <string name="muscle_chest">Peitoral</string>
+    <string name="muscle_upper_chest">Peitoral superior</string>
+    <string name="muscle_shoulders">Ombros</string>
+    <string name="muscle_side_delts">Deltoide lateral</string>
+    <string name="muscle_rear_delts">Deltoide posterior</string>
+    <string name="muscle_triceps">Tríceps</string>
+    <string name="muscle_lats">Dorsais</string>
+    <string name="muscle_back">Costas</string>
+    <string name="muscle_mid_back">Meio das costas</string>
+    <string name="muscle_biceps">Bíceps</string>
+    <string name="muscle_biceps_forearm">Bíceps e antebraço</string>
+    <string name="muscle_quads_glutes">Quadríceps e glúteos</string>
+    <string name="muscle_quads">Quadríceps</string>
+    <string name="muscle_hamstrings">Posteriores da coxa</string>
+    <string name="muscle_hamstrings_glutes">Posteriores e glúteos</string>
+    <string name="muscle_calves">Panturrilhas</string>
+    <string name="muscle_core">Abdômen e core</string>
+    <string name="muscle_triceps_chest">Tríceps e peitoral</string>
+    <string name="muscle_glutes">Glúteos</string>
+    <string name="muscle_glute_medius">Glúteo médio</string>
+
+    <!-- ============================================================
+         Exercícios — Treino A (peito, ombros e tríceps)
+         ============================================================ -->
+    <string name="ex_bench_press_name">Supino reto com barra</string>
+    <string-array name="ex_bench_press_steps">
+        <item>Deite no banco com os olhos alinhados à barra e os pés firmes no chão.</item>
+        <item>Segure a barra com as mãos um pouco além da largura dos ombros e junte as escápulas.</item>
+        <item>Desça a barra com controle até a linha do peito, com os cotovelos a cerca de 45° do tronco.</item>
+        <item>Empurre a barra de volta até estender os braços, sem travar os cotovelos.</item>
+    </string-array>
+    <string-array name="ex_bench_press_mistakes">
+        <item>Tirar o quadril do banco para conseguir subir a carga.</item>
+        <item>Quicar a barra no peito em vez de controlar a descida.</item>
+        <item>Abrir demais os cotovelos (90°), sobrecarregando os ombros.</item>
+    </string-array>
+    <string name="ex_bench_press_note">Controle a descida em 2 segundos. Nas duas últimas séries, peça para alguém ficar de apoio.</string>
+
+    <string name="ex_incline_db_press_name">Supino inclinado com halteres</string>
+    <string-array name="ex_incline_db_press_steps">
+        <item>Ajuste o banco entre 30° e 45° e sente-se com os halteres apoiados nas coxas.</item>
+        <item>Deite levando os halteres à altura do peito, com as palmas voltadas para a frente.</item>
+        <item>Empurre os halteres para cima e levemente para dentro, até quase se tocarem.</item>
+        <item>Desça devagar até sentir um bom alongamento do peitoral.</item>
+    </string-array>
+    <string-array name="ex_incline_db_press_mistakes">
+        <item>Usar inclinação alta demais, transferindo o trabalho para os ombros.</item>
+        <item>Bater os halteres no topo do movimento.</item>
+        <item>Descer rápido e sem controle, perdendo a tensão no peito.</item>
+    </string-array>
+
+    <string name="ex_pec_deck_name">Crucifixo na máquina</string>
+    <string-array name="ex_pec_deck_steps">
+        <item>Regule o banco para que as pegadas fiquem na altura do meio do peito.</item>
+        <item>Sente-se com as costas totalmente apoiadas e os cotovelos levemente flexionados.</item>
+        <item>Feche os braços à frente do corpo, contraindo o peitoral.</item>
+        <item>Volte devagar até sentir o alongamento, sem deixar as placas baterem.</item>
+    </string-array>
+    <string-array name="ex_pec_deck_mistakes">
+        <item>Afastar as costas do encosto durante o movimento.</item>
+        <item>Voltar rápido demais, deixando o peso “cair”.</item>
+        <item>Usar carga excessiva e encurtar a amplitude.</item>
+    </string-array>
+    <string name="ex_pec_deck_note">Segure 1 segundo com os braços fechados para sentir bem o peitoral.</string>
+
+    <string name="ex_db_shoulder_press_name">Desenvolvimento com halteres</string>
+    <string-array name="ex_db_shoulder_press_steps">
+        <item>Sente-se no banco com encosto a 90° e mantenha a lombar bem apoiada.</item>
+        <item>Posicione os halteres na altura das orelhas, com os cotovelos levemente à frente do corpo.</item>
+        <item>Empurre os halteres para cima até quase estender os braços.</item>
+        <item>Desça de forma controlada até a posição inicial.</item>
+    </string-array>
+    <string-array name="ex_db_shoulder_press_mistakes">
+        <item>Arquear demais a lombar para empurrar o peso.</item>
+        <item>Descer pouco os halteres, reduzindo a amplitude.</item>
+        <item>Deixar os cotovelos muito para trás, forçando a articulação do ombro.</item>
+    </string-array>
+
+    <string name="ex_lateral_raise_name">Elevação lateral com halteres</string>
+    <string-array name="ex_lateral_raise_steps">
+        <item>Fique em pé com os halteres ao lado do corpo e o tronco levemente inclinado à frente.</item>
+        <item>Mantenha os cotovelos levemente flexionados durante toda a série.</item>
+        <item>Eleve os braços pela lateral até a altura dos ombros, conduzindo pelos cotovelos.</item>
+        <item>Desça devagar, sem deixar os halteres encostarem no corpo.</item>
+    </string-array>
+    <string-array name="ex_lateral_raise_mistakes">
+        <item>Balançar o tronco para ganhar impulso.</item>
+        <item>Subir os halteres acima da linha dos ombros, envolvendo o trapézio.</item>
+        <item>Girar os punhos com o dedo mínimo para cima.</item>
+    </string-array>
+    <string name="ex_lateral_raise_note">Carga leve e técnica limpa. Se precisar balançar o corpo, reduza o peso.</string>
+
+    <string name="ex_rope_pushdown_name">Tríceps na polia com corda</string>
+    <string-array name="ex_rope_pushdown_steps">
+        <item>De frente para a polia, segure a corda com as palmas voltadas uma para a outra.</item>
+        <item>Mantenha os cotovelos colados ao tronco e incline levemente o corpo à frente.</item>
+        <item>Estenda os cotovelos, abrindo a corda para os lados no final do movimento.</item>
+        <item>Retorne devagar até os antebraços passarem um pouco da linha paralela ao chão.</item>
+    </string-array>
+    <string-array name="ex_rope_pushdown_mistakes">
+        <item>Afastar os cotovelos do corpo durante a execução.</item>
+        <item>Usar o peso do corpo para empurrar a carga.</item>
+        <item>Encurtar a volta, perdendo amplitude.</item>
+    </string-array>
+
+    <string name="ex_overhead_extension_name">Tríceps francês com halter</string>
+    <string-array name="ex_overhead_extension_steps">
+        <item>Sentado com a coluna apoiada, segure um halter com as duas mãos acima da cabeça.</item>
+        <item>Mantenha os cotovelos apontados para a frente e próximos à cabeça.</item>
+        <item>Flexione os cotovelos descendo o halter atrás da cabeça, com controle.</item>
+        <item>Estenda os braços de volta à posição inicial, contraindo o tríceps.</item>
+    </string-array>
+    <string-array name="ex_overhead_extension_mistakes">
+        <item>Abrir os cotovelos para os lados.</item>
+        <item>Arquear a lombar ao estender os braços.</item>
+        <item>Descer rápido demais, estressando os cotovelos.</item>
+    </string-array>
+
+    <!-- ============================================================
+         Exercícios — Treino B (costas e bíceps)
+         ============================================================ -->
+    <string name="ex_lat_pulldown_name">Puxada frontal</string>
+    <string-array name="ex_lat_pulldown_steps">
+        <item>Ajuste o apoio das coxas e segure a barra com pegada aberta, um pouco além dos ombros.</item>
+        <item>Incline levemente o tronco para trás e mantenha o peito aberto.</item>
+        <item>Puxe a barra até a parte alta do peito, levando os cotovelos para baixo e para trás.</item>
+        <item>Volte devagar até estender os braços, sentindo as costas alongarem.</item>
+    </string-array>
+    <string-array name="ex_lat_pulldown_mistakes">
+        <item>Puxar a barra atrás da nuca.</item>
+        <item>Jogar o tronco para trás para roubar no movimento.</item>
+        <item>Puxar só com os braços, sem iniciar pelas escápulas.</item>
+    </string-array>
+    <string name="ex_lat_pulldown_note">Pense em levar os cotovelos até o bolso da calça, e não em puxar com as mãos.</string>
+
+    <string name="ex_barbell_row_name">Remada curvada com barra</string>
+    <string-array name="ex_barbell_row_steps">
+        <item>Segure a barra com as palmas para baixo, na largura dos ombros, e flexione levemente os joelhos.</item>
+        <item>Incline o tronco à frente, entre 45° e quase paralelo ao chão, com a coluna neutra.</item>
+        <item>Puxe a barra em direção ao umbigo, aproximando as escápulas.</item>
+        <item>Desça a barra com controle, mantendo a mesma inclinação do tronco.</item>
+    </string-array>
+    <string-array name="ex_barbell_row_mistakes">
+        <item>Arredondar a coluna durante a série.</item>
+        <item>Levantar o tronco a cada repetição para ajudar na puxada.</item>
+        <item>Usar impulso das pernas.</item>
+    </string-array>
+
+    <string name="ex_seated_row_name">Remada baixa com triângulo</string>
+    <string-array name="ex_seated_row_steps">
+        <item>Sente-se com os pés apoiados e os joelhos levemente flexionados, segurando o triângulo.</item>
+        <item>Mantenha o tronco ereto e o peito aberto.</item>
+        <item>Puxe o triângulo em direção ao abdômen, juntando as escápulas no final.</item>
+        <item>Retorne estendendo os braços, sem curvar a coluna para a frente.</item>
+    </string-array>
+    <string-array name="ex_seated_row_mistakes">
+        <item>Balançar o tronco para a frente e para trás.</item>
+        <item>Elevar os ombros em direção às orelhas ao puxar.</item>
+        <item>Soltar o peso rápido na volta.</item>
+    </string-array>
+
+    <string name="ex_one_arm_row_name">Remada unilateral com halter</string>
+    <string-array name="ex_one_arm_row_steps">
+        <item>Apoie um joelho e a mão do mesmo lado no banco, com as costas paralelas ao chão.</item>
+        <item>Segure o halter com o braço estendido e a palma voltada para o corpo.</item>
+        <item>Puxe o halter em direção ao quadril, mantendo o cotovelo próximo ao tronco.</item>
+        <item>Desça devagar até estender o braço. Complete a série e troque de lado.</item>
+    </string-array>
+    <string-array name="ex_one_arm_row_mistakes">
+        <item>Girar o tronco para subir o halter.</item>
+        <item>Puxar em direção ao peito em vez do quadril.</item>
+        <item>Encurtar a descida e perder o alongamento da dorsal.</item>
+    </string-array>
+
+    <string name="ex_face_pull_name">Face pull na polia</string>
+    <string-array name="ex_face_pull_steps">
+        <item>Ajuste a polia na altura do rosto e segure a corda com as palmas para baixo.</item>
+        <item>Dê um passo para trás, com os braços estendidos e o corpo firme.</item>
+        <item>Puxe a corda em direção ao rosto, abrindo as mãos e levando os cotovelos para trás e para cima.</item>
+        <item>Segure um instante e retorne de forma controlada.</item>
+    </string-array>
+    <string-array name="ex_face_pull_mistakes">
+        <item>Usar carga alta e compensar com o tronco.</item>
+        <item>Deixar os cotovelos abaixo da linha das mãos.</item>
+        <item>Fazer o movimento rápido, sem pausa na contração.</item>
+    </string-array>
+    <string name="ex_face_pull_note">É um exercício para a saúde do ombro: priorize a contração, não a carga.</string>
+
+    <string name="ex_barbell_curl_name">Rosca direta com barra</string>
+    <string-array name="ex_barbell_curl_steps">
+        <item>Em pé, segure a barra com as palmas para cima, na largura dos ombros.</item>
+        <item>Mantenha os cotovelos junto ao corpo e o abdômen contraído.</item>
+        <item>Flexione os cotovelos, levando a barra até a altura do peito.</item>
+        <item>Desça devagar até estender os braços por completo.</item>
+    </string-array>
+    <string-array name="ex_barbell_curl_mistakes">
+        <item>Balançar o corpo para subir a barra.</item>
+        <item>Levar os cotovelos para a frente no final do movimento.</item>
+        <item>Não estender os braços por completo na descida.</item>
+    </string-array>
+
+    <string name="ex_hammer_curl_name">Rosca martelo com halteres</string>
+    <string-array name="ex_hammer_curl_steps">
+        <item>Em pé, segure os halteres ao lado do corpo com as palmas voltadas uma para a outra.</item>
+        <item>Mantenha os cotovelos fixos ao lado do tronco.</item>
+        <item>Suba os halteres sem girar os punhos, até a altura dos ombros.</item>
+        <item>Desça devagar, controlando o movimento.</item>
+    </string-array>
+    <string-array name="ex_hammer_curl_mistakes">
+        <item>Girar os punhos durante a subida.</item>
+        <item>Usar impulso do tronco.</item>
+        <item>Afastar os cotovelos do corpo.</item>
+    </string-array>
+
+    <!-- ============================================================
+         Exercícios — Treino C (pernas e core)
+         ============================================================ -->
+    <string name="ex_back_squat_name">Agachamento livre com barra</string>
+    <string-array name="ex_back_squat_steps">
+        <item>Apoie a barra sobre o trapézio e afaste os pés na largura dos ombros, com as pontas levemente para fora.</item>
+        <item>Inspire, contraia o abdômen e comece levando o quadril para trás e para baixo.</item>
+        <item>Desça até as coxas ficarem pelo menos paralelas ao chão, com os joelhos alinhados aos pés.</item>
+        <item>Suba empurrando o chão com o pé inteiro, mantendo o peito aberto.</item>
+    </string-array>
+    <string-array name="ex_back_squat_mistakes">
+        <item>Deixar os joelhos caírem para dentro.</item>
+        <item>Tirar os calcanhares do chão.</item>
+        <item>Arredondar a lombar no fundo do movimento.</item>
+    </string-array>
+    <string name="ex_back_squat_note">Faça 2 séries leves de aquecimento. Desça só até onde a coluna se mantiver neutra.</string>
+
+    <string name="ex_leg_press_name">Leg press 45°</string>
+    <string-array name="ex_leg_press_steps">
+        <item>Sente-se com as costas e o quadril bem apoiados no encosto.</item>
+        <item>Posicione os pés na plataforma, afastados na largura do quadril.</item>
+        <item>Destrave e desça a plataforma flexionando os joelhos até cerca de 90°.</item>
+        <item>Empurre a plataforma de volta sem travar os joelhos no final.</item>
+    </string-array>
+    <string-array name="ex_leg_press_mistakes">
+        <item>Tirar o quadril do banco no fundo do movimento.</item>
+        <item>Estender por completo e travar os joelhos.</item>
+        <item>Deixar os joelhos se fecharem durante a subida.</item>
+    </string-array>
+
+    <string name="ex_stiff_name">Stiff com barra</string>
+    <string-array name="ex_stiff_steps">
+        <item>Em pé, segure a barra à frente das coxas com os joelhos levemente flexionados.</item>
+        <item>Leve o quadril para trás, descendo a barra rente às pernas com a coluna neutra.</item>
+        <item>Desça até sentir um bom alongamento atrás das coxas.</item>
+        <item>Suba contraindo glúteos e posteriores, levando o quadril à frente.</item>
+    </string-array>
+    <string-array name="ex_stiff_mistakes">
+        <item>Arredondar as costas para descer mais.</item>
+        <item>Afastar a barra do corpo.</item>
+        <item>Flexionar demais os joelhos, transformando o exercício em um agachamento.</item>
+    </string-array>
+    <string name="ex_stiff_note">Joelhos levemente flexionados o tempo todo; a barra desliza rente às pernas.</string>
+
+    <string name="ex_leg_extension_name">Cadeira extensora</string>
+    <string-array name="ex_leg_extension_steps">
+        <item>Ajuste o encosto para que o joelho fique alinhado ao eixo da máquina.</item>
+        <item>Posicione o rolo logo acima dos tornozelos e segure as pegadas laterais.</item>
+        <item>Estenda os joelhos até quase travar, contraindo o quadríceps.</item>
+        <item>Desça de forma controlada, sem deixar o peso bater.</item>
+    </string-array>
+    <string-array name="ex_leg_extension_mistakes">
+        <item>Tirar o quadril do banco para levantar mais peso.</item>
+        <item>Descer rápido, perdendo a tensão.</item>
+        <item>Usar a máquina com o joelho desalinhado do eixo.</item>
+    </string-array>
+
+    <string name="ex_leg_curl_name">Mesa flexora</string>
+    <string-array name="ex_leg_curl_steps">
+        <item>Deite de bruços com os joelhos logo após a borda da mesa.</item>
+        <item>Posicione o rolo acima dos calcanhares e segure as pegadas.</item>
+        <item>Flexione os joelhos, trazendo o rolo em direção aos glúteos.</item>
+        <item>Retorne devagar até quase estender as pernas.</item>
+    </string-array>
+    <string-array name="ex_leg_curl_mistakes">
+        <item>Levantar o quadril da mesa durante a flexão.</item>
+        <item>Usar impulso em vez de controlar o movimento.</item>
+        <item>Encurtar a amplitude na volta.</item>
+    </string-array>
+
+    <string name="ex_standing_calf_raise_name">Panturrilha em pé na máquina</string>
+    <string-array name="ex_standing_calf_raise_steps">
+        <item>Posicione os ombros sob os apoios e a ponta dos pés na borda da plataforma.</item>
+        <item>Deixe os calcanhares descerem até sentir a panturrilha alongar.</item>
+        <item>Suba na ponta dos pés o máximo possível e segure 1 segundo.</item>
+        <item>Desça devagar até a posição alongada.</item>
+    </string-array>
+    <string-array name="ex_standing_calf_raise_mistakes">
+        <item>Flexionar os joelhos para ajudar na subida.</item>
+        <item>Fazer repetições rápidas e curtas, “quicando”.</item>
+        <item>Não descer os calcanhares abaixo da plataforma.</item>
+    </string-array>
+    <string name="ex_standing_calf_raise_note">Faça uma pausa de 1 segundo embaixo para eliminar o efeito elástico.</string>
+
+    <string name="ex_plank_name">Prancha abdominal</string>
+    <string-array name="ex_plank_steps">
+        <item>Apoie os antebraços no chão, com os cotovelos alinhados abaixo dos ombros.</item>
+        <item>Estenda as pernas e apoie-se na ponta dos pés.</item>
+        <item>Contraia abdômen e glúteos, formando uma linha reta da cabeça aos calcanhares.</item>
+        <item>Mantenha a posição respirando normalmente durante todo o tempo.</item>
+    </string-array>
+    <string-array name="ex_plank_mistakes">
+        <item>Deixar o quadril cair, sobrecarregando a lombar.</item>
+        <item>Elevar demais o quadril.</item>
+        <item>Prender a respiração.</item>
+    </string-array>
+
+    <!-- ============================================================
+         Exercícios extras do catálogo
+         ============================================================ -->
+    <string name="ex_pull_up_name">Barra fixa</string>
+    <string-array name="ex_pull_up_steps">
+        <item>Segure a barra com as palmas para a frente, um pouco além da largura dos ombros.</item>
+        <item>Fique pendurado com os braços estendidos e o abdômen contraído.</item>
+        <item>Puxe o corpo levando o peito em direção à barra, com os cotovelos apontando para baixo.</item>
+        <item>Desça de forma controlada até estender os braços novamente.</item>
+    </string-array>
+    <string-array name="ex_pull_up_mistakes">
+        <item>Balançar o corpo para ganhar impulso.</item>
+        <item>Fazer meia repetição, sem estender os braços embaixo.</item>
+        <item>Esticar o pescoço para o queixo passar da barra.</item>
+    </string-array>
+
+    <string name="ex_dips_name">Mergulho nas paralelas</string>
+    <string-array name="ex_dips_steps">
+        <item>Apoie as mãos nas barras paralelas e sustente o corpo com os braços estendidos.</item>
+        <item>Mantenha o tronco levemente inclinado à frente e os ombros longe das orelhas.</item>
+        <item>Desça flexionando os cotovelos até cerca de 90°.</item>
+        <item>Empurre as barras para voltar à posição inicial.</item>
+    </string-array>
+    <string-array name="ex_dips_mistakes">
+        <item>Descer demais, forçando a frente dos ombros.</item>
+        <item>Abrir muito os cotovelos para os lados.</item>
+        <item>Encolher os ombros durante a descida.</item>
+    </string-array>
+
+    <string name="ex_lunge_name">Afundo com halteres</string>
+    <string-array name="ex_lunge_steps">
+        <item>Em pé, segure um halter em cada mão ao lado do corpo.</item>
+        <item>Dê um passo à frente mantendo o tronco ereto.</item>
+        <item>Desça até os dois joelhos formarem cerca de 90°, sem o joelho de trás encostar no chão.</item>
+        <item>Empurre com a perna da frente para voltar e alterne as pernas.</item>
+    </string-array>
+    <string-array name="ex_lunge_mistakes">
+        <item>Deixar o joelho da frente cair para dentro.</item>
+        <item>Inclinar demais o tronco à frente.</item>
+        <item>Dar passos curtos demais, sobrecarregando o joelho.</item>
+    </string-array>
+
+    <string name="ex_bulgarian_squat_name">Agachamento búlgaro</string>
+    <string-array name="ex_bulgarian_squat_steps">
+        <item>De costas para um banco, apoie o peito do pé de trás sobre ele.</item>
+        <item>Posicione o pé da frente a cerca de um passo do banco.</item>
+        <item>Desça o quadril na vertical até a coxa da frente ficar quase paralela ao chão.</item>
+        <item>Suba empurrando o chão com o pé da frente. Complete a série e troque de perna.</item>
+    </string-array>
+    <string-array name="ex_bulgarian_squat_mistakes">
+        <item>Posicionar o pé da frente perto demais do banco.</item>
+        <item>Deixar o joelho da frente cair para dentro.</item>
+        <item>Jogar o peso do corpo na perna de trás.</item>
+    </string-array>
+
+    <string name="ex_hip_thrust_name">Elevação pélvica</string>
+    <string-array name="ex_hip_thrust_steps">
+        <item>Apoie a parte alta das costas em um banco e posicione a barra, com proteção, sobre o quadril.</item>
+        <item>Afaste os pés na largura do quadril, com os joelhos flexionados.</item>
+        <item>Eleve o quadril até o tronco ficar alinhado às coxas, contraindo os glúteos.</item>
+        <item>Desça devagar sem encostar o quadril no chão.</item>
+    </string-array>
+    <string-array name="ex_hip_thrust_mistakes">
+        <item>Arquear a lombar no topo em vez de contrair os glúteos.</item>
+        <item>Posicionar os pés longe demais, levando o trabalho para os posteriores.</item>
+        <item>Subir rápido e sem pausa na contração.</item>
+    </string-array>
+
+    <string name="ex_crunch_name">Abdominal supra</string>
+    <string-array name="ex_crunch_steps">
+        <item>Deite de costas com os joelhos flexionados e os pés apoiados no chão.</item>
+        <item>Cruze os braços no peito ou apoie as mãos atrás da cabeça, sem puxá-la.</item>
+        <item>Contraia o abdômen tirando as escápulas do chão.</item>
+        <item>Desça devagar, sem relaxar totalmente o abdômen.</item>
+    </string-array>
+    <string-array name="ex_crunch_mistakes">
+        <item>Puxar o pescoço com as mãos.</item>
+        <item>Subir com impulso em vez de contrair o abdômen.</item>
+        <item>Prender a respiração durante as repetições.</item>
+    </string-array>
+
+    <string name="ex_hip_abduction_name">Cadeira abdutora</string>
+    <string-array name="ex_hip_abduction_steps">
+        <item>Sente-se com as costas apoiadas e as almofadas por fora dos joelhos.</item>
+        <item>Segure as pegadas laterais e mantenha o quadril firme no banco.</item>
+        <item>Afaste as pernas o máximo possível, contraindo a lateral dos glúteos.</item>
+        <item>Volte devagar, sem deixar as placas baterem.</item>
+    </string-array>
+    <string-array name="ex_hip_abduction_mistakes">
+        <item>Usar impulso para abrir as pernas.</item>
+        <item>Tirar o quadril do banco durante o movimento.</item>
+        <item>Voltar rápido demais, perdendo a tensão.</item>
+    </string-array>
+
+    <string name="ex_preacher_curl_name">Rosca Scott</string>
+    <string-array name="ex_preacher_curl_steps">
+        <item>Sente-se no banco Scott com a parte de trás dos braços apoiada na almofada.</item>
+        <item>Segure a barra com as palmas para cima, na largura dos ombros.</item>
+        <item>Flexione os cotovelos levando a barra em direção aos ombros.</item>
+        <item>Desça devagar até quase estender os braços.</item>
+    </string-array>
+    <string-array name="ex_preacher_curl_mistakes">
+        <item>Estender totalmente e “soltar” o peso no fim da descida.</item>
+        <item>Tirar os braços da almofada para ajudar na subida.</item>
+        <item>Usar carga alta e encurtar a amplitude.</item>
+    </string-array>
+
+</resources>

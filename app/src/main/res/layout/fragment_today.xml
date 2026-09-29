@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Aba "Hoje". O cabeçalho (resumo do treino e progresso) fica dentro de um AppBarLayout
+    com scrollFlags="scroll": ele rola junto com a lista, liberando espaço para os exercícios.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.today.TodayFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        android:stateListAnimator="@null"
+        app:liftOnScroll="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingTop="@dimen/space_xl"
+            android:paddingEnd="@dimen/screen_padding"
+            android:paddingBottom="@dimen/space_sm"
+            app:layout_scrollFlags="scroll">
+
+            <!-- Data e título -->
+            <TextView
+                android:id="@+id/text_date"
+                style="@style/AppTreino.Text.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="segunda-feira, 28 de setembro" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xs" />
+
+            <TextView
+                android:id="@+id/text_title"
+                style="@style/AppTreino.Text.Display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/today_title_today" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_back_to_today"
+                style="@style/Widget.AppTreino.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_md_negative"
+                android:text="@string/today_back_to_today"
+                android:visibility="gone"
+                app:icon="@drawable/ic_arrow_back"
+                tools:visibility="visible" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_lg" />
+
+            <!-- Card com o resumo do treino e o progresso -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_workout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_xl">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/text_workout_letter"
+                            style="@style/AppTreino.Text.Headline"
+                            android:layout_width="@dimen/letter_badge_size"
+                            android:layout_height="@dimen/letter_badge_size"
+                            android:background="@drawable/bg_rounded_accent"
+                            android:gravity="center"
+                            android:textColor="@color/color_on_accent"
+                            tools:text="A" />
+
+                        <Space
+                            android:layout_width="@dimen/space_lg"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text_workout_name"
+                                style="@style/AppTreino.Text.TitleLarge"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:text="Treino A" />
+
+                            <TextView
+                                android:id="@+id/text_workout_focus"
+                                style="@style/AppTreino.Text.BodySecondary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:text="Peito, ombros e tríceps" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_lg" />
+
+                    <TextView
+                        android:id="@+id/text_workout_meta"
+                        style="@style/AppTreino.Text.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/space_sm"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_timer"
+                        app:drawableTint="@color/color_text_secondary"
+                        tools:text="7 exercícios · 23 séries · ~45 min" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_xl" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/text_progress_count"
+                            style="@style/AppTreino.Text.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            tools:text="3 de 7 exercícios" />
+
+                        <TextView
+                            android:id="@+id/text_progress_percent"
+                            style="@style/AppTreino.Text.StatValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color_accent"
+                            tools:text="43%" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_sm" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progress_workout"
+                        style="@style/Widget.AppTreino.ProgressIndicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        tools:progress="43" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_md" />
+
+                    <TextView
+                        android:id="@+id/text_progress_message"
+                        style="@style/AppTreino.Text.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Continue assim: faltam 4 exercícios." />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xl" />
+
+            <!-- Título da lista + ação de reiniciar -->
+            <LinearLayout
+                android:id="@+id/layout_list_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/touch_target"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/AppTreino.Text.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/today_exercises_header" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_restart"
+                    style="@style/Widget.AppTreino.Button.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/today_reset_workout"
+                    android:visibility="gone"
+                    app:icon="@drawable/ic_restart"
+                    tools:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Conteúdo: lista de exercícios OU estado de descanso -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_exercises"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingTop="@dimen/space_xs"
+            android:paddingEnd="@dimen/screen_padding"
+            android:paddingBottom="@dimen/list_bottom_padding"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_exercise" />
+
+        <LinearLayout
+            android:id="@+id/layout_rest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/space_xxxl"
+            android:paddingTop="@dimen/space_huge"
+            android:paddingEnd="@dimen/space_xxxl"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="@dimen/avatar_large"
+                android:layout_height="@dimen/avatar_large"
+                android:background="@drawable/bg_circle_accent_soft">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_huge"
+                    android:layout_height="@dimen/icon_huge"
+                    android:layout_gravity="center"
+                    android:importantForAccessibility="no"
+                    android:padding="@dimen/space_sm"
+                    android:src="@drawable/ic_rest"
+                    app:tint="@color/color_accent" />
+            </FrameLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xl" />
+
+            <TextView
+                style="@style/AppTreino.Text.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rest_day_title" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_sm" />
+
+            <TextView
+                style="@style/AppTreino.Text.BodySecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/rest_day_message" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xxl" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_see_week"
+                style="@style/Widget.AppTreino.Button.Outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_xxl"
+                android:paddingEnd="@dimen/space_xxl"
+                android:text="@string/rest_day_action"
+                app:icon="@drawable/ic_calendar" />
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

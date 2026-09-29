@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Um item de "Erros comuns" (inflado dinamicamente no detalhe). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/space_md">
+
+    <FrameLayout
+        android:layout_width="@dimen/step_number_size"
+        android:layout_height="@dimen/step_number_size"
+        android:background="@drawable/bg_circle_error_soft">
+
+        <ImageView
+            android:layout_width="@dimen/icon_small"
+            android:layout_height="@dimen/icon_small"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_close"
+            app:tint="@color/color_error" />
+    </FrameLayout>
+
+    <Space
+        android:layout_width="@dimen/space_md"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/text_mistake"
+        style="@style/AppTreino.Text.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:lineSpacingMultiplier="1.15"
+        android:paddingTop="@dimen/space_xs"
+        tools:text="Tirar o quadril do banco para conseguir subir a carga." />
+</LinearLayout>

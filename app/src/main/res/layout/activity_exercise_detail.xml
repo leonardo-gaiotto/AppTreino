@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tela de detalhe do exercício (segunda Activity, aberta por Intent explícita).
+    Estrutura: conteúdo rolável (miniatura grande + informações) e uma barra fixa
+    embaixo com a ação "Marcar como feito".
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.exercise.ExerciseDetailActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Miniatura grande do vídeo -->
+                <FrameLayout
+                    android:id="@+id/layout_hero"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/thumbnail_hero_height"
+                    android:background="@color/color_surface_variant">
+
+                    <!-- contentDescription definida no código, com o nome do exercício -->
+                    <ImageView
+                        android:id="@+id/image_hero"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/placeholder_thumbnail" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_scrim_bottom" />
+
+                    <!-- Botão de play: contentDescription definida no código -->
+                    <ImageView
+                        android:id="@+id/button_play_hero"
+                        android:layout_width="@dimen/play_button_large"
+                        android:layout_height="@dimen/play_button_large"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_circle_accent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:padding="@dimen/play_icon_padding_large"
+                        android:src="@drawable/ic_play"
+                        app:tint="@color/color_on_accent"
+                        tools:ignore="ContentDescription" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/screen_padding"
+                    android:paddingTop="@dimen/space_xl"
+                    android:paddingEnd="@dimen/screen_padding"
+                    android:paddingBottom="@dimen/space_xxl">
+
+                    <!-- Cabeçalho -->
+                    <TextView
+                        android:id="@+id/text_muscle"
+                        style="@style/AppTreino.Text.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Peitoral" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_md" />
+
+                    <TextView
+                        android:id="@+id/text_name"
+                        style="@style/AppTreino.Text.Display"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Supino reto com barra" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_xs" />
+
+                    <TextView
+                        android:id="@+id/text_position"
+                        style="@style/AppTreino.Text.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Exercício 1 de 7 · Treino A" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_xl" />
+
+                    <!-- Prescrição: séries, repetições, carga e descanso (grade 2x2) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <include
+                            android:id="@+id/stat_sets"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            layout="@layout/view_stat_tile" />
+
+                        <Space
+                            android:layout_width="@dimen/space_sm"
+                            android:layout_height="match_parent" />
+
+                        <include
+                            android:id="@+id/stat_reps"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            layout="@layout/view_stat_tile" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_sm" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <include
+                            android:id="@+id/stat_load"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            layout="@layout/view_stat_tile" />
+
+                        <Space
+                            android:layout_width="@dimen/space_sm"
+                            android:layout_height="match_parent" />
+
+                        <include
+                            android:id="@+id/stat_rest"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            layout="@layout/view_stat_tile" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_lg" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_watch"
+                        style="@style/Widget.AppTreino.Button.Outlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/action_watch_youtube"
+                        app:icon="@drawable/ic_play"
+                        app:iconGravity="textStart" />
+
+                    <!-- Observação do coach (opcional) -->
+                    <LinearLayout
+                        android:id="@+id/layout_coach_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/space_xxl"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <com.google.android.material.card.MaterialCardView
+                            style="@style/Widget.AppTreino.Card.Accent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/space_lg">
+
+                                <TextView
+                                    style="@style/AppTreino.Text.Overline"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="@dimen/space_sm"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/section_coach_note"
+                                    app:drawableStartCompat="@drawable/ic_chat_small"
+                                    app:drawableTint="@color/color_accent" />
+
+                                <Space
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/space_sm" />
+
+                                <TextView
+                                    android:id="@+id/text_coach_note"
+                                    style="@style/AppTreino.Text.Body"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:lineSpacingMultiplier="1.15"
+                                    tools:text="Controle a descida em 2 segundos." />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_xxl" />
+
+                    <!-- Registro do aluno: uma linha por série (coach × você) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/AppTreino.Text.TitleLarge"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/section_log" />
+
+                        <TextView
+                            android:id="@+id/text_sets_registered"
+                            style="@style/AppTreino.Text.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color_accent"
+                            android:textStyle="bold"
+                            tools:text="2 de 4 séries" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_xs" />
+
+                    <TextView
+                        style="@style/AppTreino.Text.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_log_hint" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_md" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_sets"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_set_log" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_xl" />
+
+                    <!-- Passo a passo -->
+                    <TextView
+                        style="@style/AppTreino.Text.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_steps" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_md" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_steps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_lg" />
+
+                    <!-- Erros comuns -->
+                    <TextView
+                        style="@style/AppTreino.Text.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_mistakes" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_md" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_mistakes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Botão voltar flutuando sobre a miniatura -->
+        <ImageButton
+            android:id="@+id/button_back"
+            android:layout_width="@dimen/back_button_size"
+            android:layout_height="@dimen/back_button_size"
+            android:layout_marginStart="@dimen/space_lg"
+            android:layout_marginTop="@dimen/space_sm"
+            android:background="@drawable/bg_circle_scrim"
+            android:contentDescription="@string/cd_back"
+            android:padding="@dimen/back_button_padding"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/color_text_on_media" />
+    </FrameLayout>
+
+    <!-- Barra de ação fixa -->
+    <LinearLayout
+        android:id="@+id/layout_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_bar"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingTop="@dimen/space_md"
+        android:paddingEnd="@dimen/screen_padding"
+        android:paddingBottom="@dimen/space_md">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_done"
+            style="@style/Widget.AppTreino.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_mark_done"
+            app:icon="@drawable/ic_check"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+
+</LinearLayout>

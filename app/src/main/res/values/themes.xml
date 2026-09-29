@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tema único baseado em Material 3 DayNight. As cores vêm de values/colors.xml (claro)
+    e values-night/colors.xml (escuro). O app inicia no modo escuro por padrão
+    (ver AppTreinoApplication / ThemeSettings).
+-->
+<resources>
+
+    <style name="Base.Theme.AppTreino" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Cor primária = verde-limão: botões, progresso, switches -->
+        <item name="colorPrimary">@color/brand_lime</item>
+        <item name="colorOnPrimary">@color/color_on_accent</item>
+        <item name="colorPrimaryContainer">@color/color_accent_soft</item>
+        <item name="colorOnPrimaryContainer">@color/color_accent</item>
+        <item name="colorSecondary">@color/color_accent</item>
+        <item name="colorOnSecondary">@color/color_on_accent</item>
+        <!-- Indicador do item ativo na Bottom Navigation -->
+        <item name="colorSecondaryContainer">@color/color_accent_container</item>
+        <item name="colorOnSecondaryContainer">@color/color_on_accent</item>
+
+        <!-- Superfícies e texto -->
+        <item name="android:colorBackground">@color/color_background</item>
+        <item name="colorSurface">@color/color_surface</item>
+        <item name="colorOnSurface">@color/color_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/color_text_secondary</item>
+        <item name="colorSurfaceContainerLowest">@color/color_background</item>
+        <item name="colorSurfaceContainerLow">@color/color_surface</item>
+        <item name="colorSurfaceContainer">@color/color_surface</item>
+        <item name="colorSurfaceContainerHigh">@color/color_surface</item>
+        <item name="colorSurfaceContainerHighest">@color/color_surface_variant</item>
+        <item name="colorOutline">@color/color_outline</item>
+        <item name="colorOutlineVariant">@color/color_outline</item>
+        <item name="colorError">@color/color_error</item>
+
+        <!--
+            Cores fixas: sem Dynamic Color e sem "elevation overlay". No Material 3 o overlay
+            mistura a cor primária (verde-limão) nas superfícies elevadas, o que deixava a
+            Bottom Navigation com fundo verde-oliva.
+        -->
+        <item name="elevationOverlayEnabled">false</item>
+
+        <item name="android:windowBackground">@color/color_background</item>
+        <item name="materialCardViewStyle">@style/Widget.AppTreino.Card</item>
+        <item name="bottomNavigationStyle">@style/Widget.AppTreino.BottomNavigation</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.AppTreino.Dialog</item>
+    </style>
+
+    <style name="Theme.AppTreino" parent="Base.Theme.AppTreino" />
+
+    <!--
+        Tema da Splash Screen (biblioteca core-splashscreen).
+        Após o installSplashScreen() a Activity passa a usar o postSplashScreenTheme.
+    -->
+    <style name="Theme.AppTreino.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.AppTreino</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTreino.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/color_accent</item>
+        <item name="colorSurfaceContainerHigh">@color/color_surface_variant</item>
+    </style>
+
+</resources>

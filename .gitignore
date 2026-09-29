@@ -1,0 +1,15 @@
+# Arquivos gerados e específicos de cada máquina (não vão para o repositório)
+*.iml
+.gradle
+.kotlin/
+/build
+/captures
+.externalNativeBuild
+.cxx
+.DS_Store
+
+# Configurações do Android Studio da máquina local
+/.idea/
+
+# Caminho do Android SDK desta máquina (o Android Studio recria automaticamente)
+local.properties

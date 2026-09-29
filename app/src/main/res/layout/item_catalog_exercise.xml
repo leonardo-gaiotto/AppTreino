@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Exercício no catálogo: miniatura do vídeo, nome e músculo-alvo. Tocar adiciona ao treino. -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_catalog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_sm"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_md">
+
+        <FrameLayout
+            android:layout_width="@dimen/thumbnail_card_width"
+            android:layout_height="@dimen/thumbnail_catalog_height">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.AppTreino.Thumbnail"
+                tools:src="@drawable/placeholder_thumbnail" />
+
+            <ImageView
+                android:layout_width="@dimen/play_button_small"
+                android:layout_height="@dimen/play_button_small"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle_scrim"
+                android:importantForAccessibility="no"
+                android:padding="@dimen/play_icon_padding_small"
+                android:src="@drawable/ic_play"
+                app:tint="@color/color_text_on_media" />
+        </FrameLayout>
+
+        <Space
+            android:layout_width="@dimen/space_md"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_group"
+                style="@style/AppTreino.Text.Overline.Compact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Peito" />
+
+            <TextView
+                android:id="@+id/text_name"
+                style="@style/AppTreino.Text.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Supino reto com barra" />
+
+            <TextView
+                android:id="@+id/text_target"
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Peitoral" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/icon_large"
+            android:layout_height="@dimen/icon_large"
+            android:layout_marginStart="@dimen/space_sm"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_add"
+            app:tint="@color/color_accent" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

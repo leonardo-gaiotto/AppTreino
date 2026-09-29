@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Editor de treino (modo Coach), aberto por Intent explícita.
+    Nome, dias da semana (chips), exercícios (do catálogo) e cardio; botão Salvar fixo.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.editor.WorkoutEditorActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.AppTreino.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:title="@string/editor_title_new" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_editor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingEnd="@dimen/screen_padding"
+            android:paddingBottom="@dimen/space_xxl">
+
+            <TextView
+                android:id="@+id/text_student"
+                style="@style/AppTreino.Text.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Treino de Leonardo" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_md" />
+
+            <!-- Nome -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_name"
+                style="@style/Widget.AppTreino.TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/field_workout_name"
+                app:helperText="@string/field_workout_name_helper">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLength="50"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xl" />
+
+            <!-- Dias da semana -->
+            <TextView
+                style="@style/AppTreino.Text.TitleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/editor_days_title" />
+
+            <TextView
+                android:id="@+id/text_days_helper"
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/editor_days_helper" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_sm"
+                app:chipSpacingHorizontal="@dimen/space_sm" />
+
+            <TextView
+                android:id="@+id/text_days_error"
+                style="@style/AppTreino.Text.Error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:text="@string/error_workout_days"
+                tools:visibility="visible" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xl" />
+
+            <!-- Exercícios -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/AppTreino.Text.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/editor_exercises_title" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_add_exercise"
+                    style="@style/Widget.AppTreino.Button.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_add"
+                    app:icon="@drawable/ic_add" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/AppTreino.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/editor_exercises_helper" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_sm" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_exercises"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_editor_exercise" />
+
+            <TextView
+                android:id="@+id/text_exercises_empty"
+                style="@style/AppTreino.Text.EmptyBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/editor_exercises_empty"
+                android:visibility="gone" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xl" />
+
+            <!-- Cardio -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/AppTreino.Text.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/editor_cardio_title" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_add_cardio"
+                    style="@style/Widget.AppTreino.Button.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_add"
+                    app:icon="@drawable/ic_add" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_xs" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_cardio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_editor_cardio" />
+
+            <TextView
+                android:id="@+id/text_cardio_empty"
+                style="@style/AppTreino.Text.EmptyBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/editor_cardio_empty"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/text_content_error"
+                style="@style/AppTreino.Text.Error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_md"
+                android:text="@string/error_workout_empty"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_bar"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingTop="@dimen/space_md"
+        android:paddingEnd="@dimen/screen_padding"
+        android:paddingBottom="@dimen/space_md">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_save"
+            style="@style/Widget.AppTreino.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_save_workout"
+            app:icon="@drawable/ic_check"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+</LinearLayout>

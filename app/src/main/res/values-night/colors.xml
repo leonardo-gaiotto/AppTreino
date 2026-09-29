@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paleta do tema ESCURO (padrão do app), com destaque verde-limão. -->
+<resources>
+    <!-- Superfícies -->
+    <color name="color_background">#FF0B0C0F</color>
+    <color name="color_surface">#FF15171C</color>
+    <color name="color_surface_variant">#FF1E2128</color>
+    <color name="color_outline">#FF2A2E37</color>
+
+    <!-- Texto -->
+    <color name="color_text_primary">#FFF3F5F8</color>
+    <color name="color_text_secondary">#FF9BA3B1</color>
+
+    <!-- Destaque -->
+    <color name="color_accent">#FFC6FF3D</color>
+    <color name="color_accent_soft">#FF1D260E</color>
+
+    <!-- Alertas -->
+    <color name="color_error">#FFFF6B6B</color>
+    <color name="color_error_soft">#FF2A1618</color>
+
+    <!-- Aviso -->
+    <color name="color_warning">#FFFFA24D</color>
+    <color name="color_warning_soft">#FF2B1E10</color>
+</resources>
